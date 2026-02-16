@@ -182,7 +182,11 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+
+            display: flex;
+            flex-direction: column;   /* 🔥 MUHIM */
         }
+
 
         .service-card::before {
             content: '';
@@ -245,9 +249,10 @@
         }
 
         .service-card .btn {
+            margin-top: auto;   /* 🔥 Eng muhim qator */
             width: 100%;
-            justify-content: center;
         }
+
 
         /* Features Section */
         .features {
@@ -414,10 +419,10 @@
     <ul class="nav-links">
         <li><a href="#services">Xizmatlar</a></li>
         <li><a href="#features">Imkoniyatlar</a></li>
-        <li><a href="#pricing">Narxlar</a></li>
+{{--        <li><a href="#pricing">Narxlar</a></li>--}}
     </ul>
     <div class="auth-buttons">
-        <a href="#" class="btn btn-outline">Kirish</a>
+{{--        <a href="#" class="btn btn-outline">Kirish</a>--}}
         <a href="#" class="btn btn-primary">Boshlanish</a>
     </div>
 </nav>
@@ -428,7 +433,6 @@
     <p>Turkiya, E-ombor va Belarus dan xalol va tez ravishda ma'lumotlarni yig'ing</p>
     <div class="hero-buttons">
         <a href="#services" class="btn btn-primary">Xizmatlarni Ko'rish</a>
-        <a href="#" class="btn btn-outline">Demo Olish</a>
     </div>
 </section>
 
@@ -445,7 +449,7 @@
             <div class="service-icon">🇹🇷</div>
             <h3>Turkiya Skrapinga</h3>
             <p>Turkiya bozoridan eng yangi va to'liq ma'lumotlarni yig'ing. E-commerce saytlari, narxlar, mahsulot ma'lumotlarini real vaqtda oling.</p>
-            <button class="btn btn-primary">Boshlash</button>
+            <a href="{{ route('turkeyScraping') }}" class="btn btn-primary">Boshlash</a>
         </div>
 
         <!-- E-Commerce Scraping -->
@@ -453,7 +457,7 @@
             <div class="service-icon">🛍️</div>
             <h3>E-Ombor Skrapinga</h3>
             <p>Katta e-commerce platformalardan mahsulot katalogini, narxlarni va reyting ma'lumotlarini avtomatik yig'ing.</p>
-            <button class="btn btn-primary">Boshlash</button>
+            <a href="{{ route('eOmborScraping') }}" class="btn btn-primary">Boshlash</a>
         </div>
 
         <!-- Belarus Scraping -->
@@ -461,8 +465,31 @@
             <div class="service-icon">🇧🇾</div>
             <h3>Belarus Skrapinga</h3>
             <p>Belarus bozorining tahlil uchun kerakli ma'lumotlarni yig'ing. Mahalliy web-saytlar va bozor ma'lumotlarini ta'minlanuvchidan oling.</p>
-            <button class="btn btn-primary">Boshlash</button>
+            <a href=" {{ route('belarusScraping') }}" class="btn btn-primary">Boshlash</a>
         </div>
+            <!-- Turkey Scraping -->
+            <div class="service-card">
+                <div class="service-icon">🇰🇿</div>
+                <h3>Qazoq Skrapinga</h3>
+                <p>Turkiya bozoridan eng yangi va to'liq ma'lumotlarni yig'ing. E-commerce saytlari, narxlar, mahsulot ma'lumotlarini real vaqtda oling.</p>
+                <a href="{{ route('qozoqScraping') }}" class="btn btn-primary">Boshlash</a>
+            </div>
+
+            <!-- E-Commerce Scraping -->
+            <div class="service-card">
+                <div class="service-icon">🛍️</div>
+                <h3>Mintrans Skrapinga</h3>
+                <p>Katta e-commerce platformalardan mahsulot katalogini, narxlarni va reyting ma'lumotlarini avtomatik yig'ing.</p>
+                <a href="{{ route('mintransScraping') }}" class="btn btn-primary">Boshlash</a>
+            </div>
+
+            <!-- Belarus Scraping -->
+            <div class="service-card">
+                <div class="service-icon">🇧🇾</div>
+                <h3>Belarus Skrapinga</h3>
+                <p>Belarus bozorining tahlil uchun kerakli ma'lumotlarni yig'ing. Mahalliy web-saytlar va bozor ma'lumotlarini ta'minlanuvchidan oling.</p>
+                <button class="btn btn-primary">Boshlash</button>
+            </div>
     </div>
 </section>
 
