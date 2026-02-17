@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Qozoq extends Model
+class BelarusBenyakoni extends Model
 {
-    protected $table = 'qozoqs';
-
     protected $fillable = [
-        'boundary_name',
+        'call_order',
+        'queue_type',
         'car_number',
-        'date_and_time',
+        'date_of_registration_in_the_zo',
+        'status_changed',
         'status',
         'company_name',
     ];

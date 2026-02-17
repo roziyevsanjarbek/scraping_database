@@ -4,20 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new  class extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('turkeys', function (Blueprint $table) {
+        Schema::create('belarus_kozlovichis', function (Blueprint $table) {
             $table->id();
-            $table->integer('ordinal_number')->nullable();
-            $table->integer('input_sequence_number')->nullable();
+            $table->string('call_order')->nullable();
+            $table->string('queue_type')->nullable();
             $table->string('car_number')->nullable();
-            $table->date('date')->nullable();
-            $table->string('entrance')->nullable();
+            $table->date('date_of_registration_in_the_zo')->nullable();
+            $table->date('status_changed')->nullable();
+            $table->string('status')->nullable();
             $table->string('company_name')->nullable();
             $table->timestamps();
         });
@@ -28,6 +29,6 @@ return new  class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('turkeys');
+        Schema::dropIfExists('belarus_kozlovichis');
     }
 };

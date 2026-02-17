@@ -12,5 +12,6 @@ class Turkey extends Model
         'car_number',
         'date',
         'entrance',
+        'company_name',
     ];
 }

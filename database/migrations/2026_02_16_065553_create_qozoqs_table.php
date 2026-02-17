@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('boundary_name')->nullable();
             $table->string('car_number')->nullable();
-            $table->date('date_and_time')->nullable();
-            $table->date('status')->nullable();
+            $table->dateTime('date_and_time')->nullable();
+            $table->string('status')->nullable();
+            $table->string('company_name')->nullable();
             $table->timestamps();
         });
     }
