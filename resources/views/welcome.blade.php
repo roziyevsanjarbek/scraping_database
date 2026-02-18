@@ -483,13 +483,6 @@
                 <a href="{{ route('mintransScraping') }}" class="btn btn-primary">Boshlash</a>
             </div>
 
-            <!-- Belarus Scraping -->
-            <div class="service-card">
-                <div class="service-icon">🇧🇾</div>
-                <h3>Belarus Skrapinga</h3>
-                <p>Belarus bozorining tahlil uchun kerakli ma'lumotlarni yig'ing. Mahalliy web-saytlar va bozor ma'lumotlarini ta'minlanuvchidan oling.</p>
-                <button class="btn btn-primary">Boshlash</button>
-            </div>
     </div>
 </section>
 

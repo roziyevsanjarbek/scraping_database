@@ -10,7 +10,7 @@
     <ul class="sidebar-menu">
         <li>
             <a href="{{ route('eOmborATScraping') }}" class="{{ request()->routeIs('eOmborATScraping') ? 'active' : '' }}">
-               
+
                 E Ombor Scraping AT Bo'yicha
             </a>
         </li>

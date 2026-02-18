@@ -589,7 +589,7 @@
         const companyName = document.getElementById('searchCompanyName').value;
         const date = document.getElementById('searchDate').value;
 
-        let url = new URL('http://localhost:8000/api/turkey/export');
+        let url = new URL('/api/turkey/export', window.location.origin);
 
         if (inputSequence) url.searchParams.append('input_sequence_number', inputSequence);
         if (carNumber) url.searchParams.append('car_number', carNumber);
@@ -652,7 +652,7 @@
             uploadBtn.innerText = "Yuklanmoqda...";
             uploadBtn.disabled = true;
 
-            const response = await fetch('http://localhost:8000/api/turkey/import', {
+            const response = await fetch('/api/turkey/import', {
                 method: 'POST',
                 body: formData
             });
@@ -681,7 +681,7 @@
         const companyName = document.getElementById('searchCompanyName').value;
         const date = document.getElementById('searchDate').value;
 
-        let url = new URL('http://localhost:8000/api/turkey');
+        let url = new URL('/api/turkey', window.location.origin);
         url.searchParams.append('page', page);
 
         if (inputSequence) url.searchParams.append('input_sequence_number', inputSequence);

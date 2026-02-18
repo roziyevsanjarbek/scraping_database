@@ -574,7 +574,7 @@
                 uploadBtn.innerText = "Yuklanmoqda...";
                 uploadBtn.disabled = true;
 
-                const response = await fetch('http://localhost:8000/api/belarus-kozlovichi/import', {
+                const response = await fetch('/api/belarus-kozlovichi/import', {
                     method: 'POST',
                     body: formData
                 });
@@ -610,7 +610,7 @@
             const registrationDate = document.getElementById('searchRegistrationDate')?.value;
             const statusChanged = document.getElementById('searchStatusChanged')?.value;
 
-            let url = new URL('http://localhost:8000/api/belarus-kozlovichi/export');
+            let url = new URL('/api/belarus-kozlovichi/export', window.location.origin);
 
             if (callOrder) url.searchParams.append('call_order', callOrder);
             if (carNumber) url.searchParams.append('car_number', carNumber);
@@ -629,7 +629,7 @@
             const registrationDate = document.getElementById('searchRegistrationDate')?.value;
             const statusChanged = document.getElementById('searchStatusChanged')?.value;
 
-            let url = new URL('http://localhost:8000/api/belarus-kozlovichi');
+            let url = new URL('/api/belarus-kozlovichi', window.location.origin);
 
             url.searchParams.append('page', page);
 

@@ -577,7 +577,7 @@
                 uploadBtn.innerText = "Yuklanmoqda...";
                 uploadBtn.disabled = true;
 
-                const response = await fetch('http://localhost:8000/api/avia-eombor/import', {
+                const response = await fetch('/api/avia-eombor/import', {
                     method: 'POST',
                     body: formData
                 });
@@ -609,7 +609,7 @@
             const flightNumber = document.getElementById('flight_number').value;
             const postCode = document.getElementById('border_customs_post_code').value;
 
-            let url = new URL('http://localhost:8000/api/avia-e-ombor/export');
+            let url = new URL('/api/avia-e-ombor/export', window.location.origin);
 
             if (airWaybill) url.searchParams.append('air_waybill_number', airWaybill);
             if (registrationDate) url.searchParams.append('registration_date', registrationDate);
@@ -638,7 +638,7 @@
 
             try {
 
-                const response = await fetch(`http://localhost:8000/api/avia-e-ombor?${params}`);
+                const response = await fetch(`/api/avia-e-ombor?${params}`);
                 const result = await response.json();
 
                 if (!result.status) return;

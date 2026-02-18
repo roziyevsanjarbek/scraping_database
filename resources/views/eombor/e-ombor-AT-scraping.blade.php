@@ -579,7 +579,7 @@
                 uploadBtn.innerText = "Yuklanmoqda...";
                 uploadBtn.disabled = true;
 
-                const response = await fetch('http://localhost:8000/api/at-e-ombor/import', {
+                const response = await fetch('/api/at-e-ombor/import', {
                     method: 'POST',
                     body: formData
                 });
@@ -614,7 +614,7 @@
             const transportNumber = document.getElementById('searchTransport').value;
             const inn = document.getElementById('searchInn').value;
 
-            let url = new URL('http://localhost:8000/api/at-e-ombor/export');
+            let url = new URL('/api/at-e-ombor/export', window.location.origin);
 
             if (documentNumber) url.searchParams.append('document_number', documentNumber);
             if (customDate) url.searchParams.append('custom_date', customDate);
@@ -664,7 +664,8 @@
             const transportNumber = document.getElementById('searchTransport').value;
             const inn = document.getElementById('searchInn').value;
 
-            let url = new URL('http://localhost:8000/api/at-e-ombor');
+            let url = new URL('/api/at-e-ombor', window.location.origin);
+
 
             url.searchParams.append('page', page);
 
