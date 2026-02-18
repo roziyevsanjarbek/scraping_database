@@ -63,6 +63,7 @@ Route::get('/turkey/export', [TurkeyController::class, 'export']);
 
 
 Route::post('/qozoq/import', [QozoqController::class, 'import']);
+Route::get('/qozoq', [QozoqController::class, 'index']);
 
 
 

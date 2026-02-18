@@ -455,7 +455,7 @@
     </div>
     <ul class="sidebar-menu">
         <li>
-            <a href="#" class="active">
+            <a href="{{ route('qozoqScraping') }}" class="active">
                 <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -464,52 +464,12 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="/">
                 <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                Ma'lumotlar
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M11 4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4z"></path>
-                    <path d="M16 4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4z"></path>
-                </svg>
-                Jadvallar
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                    <polyline points="13 2 13 9 20 9"></polyline>
-                </svg>
-                Fayllar
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="1"></circle>
-                    <circle cx="19" cy="12" r="1"></circle>
-                    <circle cx="5" cy="12" r="1"></circle>
-                </svg>
-                Ko'p ko'rish
-            </a>
-        </li>
-        <li style="margin-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 20px;">
-            <a href="#">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="1"></circle>
-                    <path d="M12 1v6m0 6v6"></path>
-                    <path d="M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24"></path>
-                    <path d="M1 12h6m6 0h6"></path>
-                    <path d="M4.22 19.78l4.24-4.24m2.12-2.12l4.24-4.24"></path>
-                </svg>
-                Sozlamalar
+                Bosh Sahifaga Qaytish
             </a>
         </li>
     </ul>
@@ -526,7 +486,8 @@
 
         <!-- Action Buttons -->
         <div class="button-group">
-            <button class="btn btn-upload">
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" hidden>
+            <button class="btn btn-upload" id="uploadBtn">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="17 8 12 3 7 8"></polyline>
@@ -554,7 +515,38 @@
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
-                        <input type="text" placeholder="Ism kiriting...">
+                        <select id="searchBoundary" style="width:100%;border:none;background:transparent;outline:none;">
+                            <option value="">Barchasi</option>
+                            <option>Акбалшык – Воскресенское</option>
+                            <option>Аксай – Илек</option>
+                            <option>Алимбет – Орск</option>
+                            <option>Амангельды – Невольное</option>
+                            <option>Аят – Николаевка</option>
+                            <option>Бидаик – Одесское</option>
+                            <option>Жайсан – Сагарчин</option>
+                            <option>Жана Жол – Петухово</option>
+                            <option>Жаныбек – Вишневка</option>
+                            <option>Жезкент – Горняк</option>
+                            <option>Желкуар – Мариинский</option>
+                            <option>Кайрак – Бугристое</option>
+                            <option>Каракога – Исилькуль</option>
+                            <option>Карашатау – Светлый</option>
+                            <option>Кондыбай – Комсомольский</option>
+                            <option>Косак – Павловка</option>
+                            <option>Коянбай – Малиновое Озеро</option>
+                            <option>Курмангазы – Караузек</option>
+                            <option>Кызыл Жар – Казанское</option>
+                            <option>Найза – Павловка (Славгород)</option>
+                            <option>Орда – Полынный</option>
+                            <option>Сырым – Маштаково</option>
+                            <option>Таскала – Озинки</option>
+                            <option>Убаган – Звериноголовское</option>
+                            <option>Убе – Михайловка</option>
+                            <option>Урлютобе – Ольховка</option>
+                            <option>Шаган – Теплое</option>
+                            <option>Шарбакты – Кулунда</option>
+                            <option>Ауыл – Веселоярск</option>
+                        </select>
                     </div>
                 </div>
 
@@ -565,7 +557,7 @@
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
-                        <input type="text" placeholder="Vaqt kiriting...">
+                        <input type="date" id="searchDate">
                     </div>
                 </div>
 
@@ -576,18 +568,19 @@
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
-                        <input type="text" placeholder="Holat kiriting...">
+                        <input type="text" id="searchStatus" placeholder="Holat">
+
                     </div>
                 </div>
 
                 <div class="search-box">
-                    <label>Post kodi bo'yicha</label>
+                    <label>Avto raqam bo'yicha</label>
                     <div class="input-wrapper">
                         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
                             <path d="m21 21-4.35-4.35"></path>
                         </svg>
-                        <input type="text" placeholder="Post kodi kiriting...">
+                        <input type="text" id="searchCar" placeholder="Avto raqam">
                     </div>
                 </div>
             </div>
@@ -599,70 +592,73 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Nomi</th>
-                        <th>Vaqti</th>
+                        <th>Chegara nomi</th>
+                        <th>Avto raqami</th>
+                        <th>Sana</th>
                         <th>Holati</th>
-                        <th>Chegara</th>
-                        <th>Post kodi</th>
+                        <th>Tashkilot</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>Aloqadorov Sherzod</td>
-                        <td>09:30</td>
-                        <td><span class="status confirmed">Tasdiqlandi</span></td>
-                        <td>Fergona</td>
-                        <td>150100</td>
-                    </tr>
-                    <tr>
-                        <td>Qodirov Javlon</td>
-                        <td>10:15</td>
-                        <td><span class="status pending">Kutilmoqda</span></td>
-                        <td>Namangan</td>
-                        <td>160100</td>
-                    </tr>
-                    <tr>
-                        <td>Abdullayev Karim</td>
-                        <td>11:45</td>
-                        <td><span class="status rejected">Rad etildi</span></td>
-                        <td>Andijon</td>
-                        <td>170100</td>
-                    </tr>
-                    <tr>
-                        <td>Malik Odijon</td>
-                        <td>14:20</td>
-                        <td><span class="status confirmed">Tasdiqlandi</span></td>
-                        <td>Qashqadarya</td>
-                        <td>180100</td>
-                    </tr>
-                    <tr>
-                        <td>Safarov Dilmurod</td>
-                        <td>15:00</td>
-                        <td><span class="status pending">Kutilmoqda</span></td>
-                        <td>Samarqand</td>
-                        <td>140100</td>
-                    </tr>
-                    <tr>
-                        <td>Xolmatov Farhod</td>
-                        <td>16:30</td>
-                        <td><span class="status confirmed">Tasdiqlandi</span></td>
-                        <td>Toshkent</td>
-                        <td>100000</td>
-                    </tr>
-                    </tbody>
+
+                    <tbody id="tableBody"></tbody>
                 </table>
             </div>
             <div class="table-footer">
                 Jami: <strong>6</strong> ta natija
             </div>
         </div>
+        <div id="pagination" style="padding:15px;text-align:center;"></div>
+
     </div>
 
     <script>
         // Upload button
-        document.querySelectorAll('.btn-upload')[0].addEventListener('click', function() {
-            alert('Fayl tanlash oynasi ochiladi...');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const fileInput = document.getElementById('fileInput');
+
+        // Tugma bosilganda file tanlash oynasi ochiladi
+        uploadBtn.addEventListener('click', () => {
+            fileInput.click();
         });
+
+        // File tanlanganda API ga yuboriladi
+        fileInput.addEventListener('change', async function () {
+
+            const file = this.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+
+                uploadBtn.innerText = "Yuklanmoqda...";
+                uploadBtn.disabled = true;
+
+                const response = await fetch('/api/qozoq/import', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    alert(result.message || "Xatolik yuz berdi");
+                } else {
+                    alert(result.message || "Fayl muvaffaqiyatli yuklandi");
+                    await loadQozoqData();
+                }
+
+            } catch (error) {
+                console.error(error);
+                alert("Server bilan bog'lanishda xatolik!");
+            } finally {
+                uploadBtn.innerText = "Fayl Yuklash";
+                uploadBtn.disabled = false;
+                fileInput.value = '';
+            }
+        });
+
 
         // Download button
         document.querySelectorAll('.btn-download')[0].addEventListener('click', function() {
@@ -670,54 +666,86 @@
         });
 
         // Search functionality
-        const searchInputs = document.querySelectorAll('.search-box input');
-        const tableRows = document.querySelectorAll('tbody tr');
+        async function loadQozoqData(page = 1) {
 
-        searchInputs.forEach(input => {
-            input.addEventListener('keyup', filterTable);
-        });
+            const boundary = document.getElementById('searchBoundary')?.value;
+            const car = document.getElementById('searchCar')?.value;
+            const date = document.getElementById('searchDate')?.value;
+            const status = document.getElementById('searchStatus')?.value;
 
-        function filterTable() {
-            const nameFilter = searchInputs[0].value.toLowerCase();
-            const timeFilter = searchInputs[1].value.toLowerCase();
-            const statusFilter = searchInputs[2].value.toLowerCase();
-            const postCodeFilter = searchInputs[3].value.toLowerCase();
+            let url = new URL('/api/qozoq', window.location.origin);
 
-            let visibleRows = 0;
+            url.searchParams.append('page', page);
 
-            tableRows.forEach(row => {
-                const name = row.cells[0].textContent.toLowerCase();
-                const time = row.cells[1].textContent.toLowerCase();
-                const status = row.cells[2].textContent.toLowerCase();
-                const postCode = row.cells[4].textContent.toLowerCase();
+            if (boundary) url.searchParams.append('boundary_name', boundary);
+            if (car) url.searchParams.append('car_number', car);
+            if (date) url.searchParams.append('date', date);
+            if (status) url.searchParams.append('status', status);
 
-                const matches =
-                    name.includes(nameFilter) &&
-                    time.includes(timeFilter) &&
-                    status.includes(statusFilter) &&
-                    postCode.includes(postCodeFilter);
+            const response = await fetch(url);
+            const result = await response.json();
 
-                row.style.display = matches ? '' : 'none';
-                if (matches) visibleRows++;
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+
+            const paginated = result.data;
+            const data = paginated.data;
+
+            if (data.length === 0) {
+                tableBody.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align:center;padding:30px;">
+                    Hech qanday ma'lumot topilmadi
+                </td>
+            </tr>
+        `;
+                return;
+            }
+
+            data.forEach(item => {
+                tableBody.innerHTML += `
+            <tr>
+                <td>${item.boundary_name ?? '-'}</td>
+                <td>${item.car_number ?? '-'}</td>
+                <td>${item.date_and_time ?? '-'}</td>
+                <td>${item.status ?? '-'}</td>
+                <td>${item.company_name ?? '-'}</td>
+            </tr>
+        `;
             });
 
-            // Update count
-            const footer = document.querySelector('.table-footer');
-            footer.innerHTML = `Jami: <strong>${visibleRows}</strong> ta natija`;
+            document.querySelector('.table-footer').innerHTML =
+                `Jami: <strong>${paginated.total}</strong> ta natija`;
 
-            // Show empty state if no results
-            if (visibleRows === 0) {
-                const tbody = document.querySelector('tbody');
-                if (!document.querySelector('.empty-state')) {
-                    const emptyRow = document.createElement('tr');
-                    emptyRow.innerHTML = '<td colspan="5"><div class="empty-state">Hech qanday ma\'lumot topilmadi</div></td>';
-                    tbody.appendChild(emptyRow);
-                }
-            } else {
-                const emptyRow = document.querySelector('.empty-state')?.parentElement;
-                if (emptyRow) emptyRow.remove();
+            renderPagination(paginated);
+        }
+        function renderPagination(paginated) {
+
+            const paginationDiv = document.getElementById('pagination');
+            paginationDiv.innerHTML = '';
+
+            if (paginated.last_page <= 1) return;
+
+            for (let i = 1; i <= paginated.last_page; i++) {
+
+                paginationDiv.innerHTML += `
+            <button
+                onclick="loadQozoqData(${i})"
+                style="
+                    margin:5px;
+                    padding:6px 12px;
+                    border-radius:6px;
+                    border:1px solid #1976D2;
+                    background:${i === paginated.current_page ? '#1976D2' : 'white'};
+                    color:${i === paginated.current_page ? 'white' : '#1976D2'};
+                    cursor:pointer;
+                ">
+                ${i}
+            </button>
+        `;
             }
         }
+
 
         // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
@@ -745,8 +773,21 @@
                 this.classList.add('active');
             });
         });
+
+        loadQozoqData();
+        [
+            'searchBoundary',
+            'searchCar',
+            'searchDate',
+            'searchStatus'
+        ].forEach(id => {
+            document.getElementById(id)?.addEventListener('input', () => {
+                loadQozoqData(1); // 🔥 doim 1-sahifa
+            });
+        });
+
+
     </script>
-</div>
 </div>
 </body>
 </html>
