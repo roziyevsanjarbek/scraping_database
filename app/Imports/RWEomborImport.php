@@ -2,6 +2,7 @@
 
 namespace App\Imports;
 
+use App\Models\EOmbor;
 use App\Models\RWEOmbor;
 use Illuminate\Support\Carbon;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -14,21 +15,41 @@ class RWEomborImport implements ToModel, WithHeadingRow
         return new RWEOmbor([
             'document_number'  => $row['document_number'] ?? null,
             'custom_code'      => $row['custom_code'] ?? null,
-            'custom_date'      => isset($row['custom_date'])
-                ? Carbon::parse($row['custom_date'])->format('Y-m-d')
-                : null,
+            'custom_date'      => $this->parseDate($row['custom_date'] ?? null),
             'TEBHN_number'     => $row['tebhn_number'] ?? null,
             'transport_number' => $row['transport_number'] ?? null,
             'gross_weight'     => $row['gross_weight'] ?? null,
             'inn'              => $row['inn'] ?? null,
             'recipient_name'   => $row['recipient_name'] ?? null,
             'delivery_post'    => $row['delivery_post'] ?? null,
-            'delivery_date'    => isset($row['delivery_date'])
-                ? Carbon::parse($row['delivery_date'])->format('Y-m-d')
-                : null,
+            'delivery_date'    => $this->parseDate($row['delivery_date'] ?? null),
             'arrival_place'    => $row['arrival_place'] ?? null,
             'status'           => $row['status'] ?? null,
-//            'company_name'     => null, // hozircha bosh qoladi
         ]);
     }
+
+    private function parseDate($value)
+    {
+        if (empty($value)) return null;
+
+        try {
+            if (is_numeric($value)) {
+                return \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($value)
+                    ->format('Y-m-d');
+            }
+
+            foreach (['d/m/y', 'd/m/Y', 'd.m.Y'] as $format) {
+                try {
+                    return \Carbon\Carbon::createFromFormat($format, $value)
+                        ->format('Y-m-d');
+                } catch (\Exception $e) {}
+            }
+
+            return \Carbon\Carbon::parse($value)->format('Y-m-d');
+
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
 }
+

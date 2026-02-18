@@ -31,4 +31,19 @@ class HomeController extends Controller
     {
         return view('mintrans-scraping');
     }
+
+    public function eOmborATScraping()
+    {
+        return view('eombor.e-ombor-AT-scraping');
+    }
+
+    public function eOmborRWScraping()
+    {
+        return view('eombor.e-ombor-RW-scraping');
+    }
+
+    public function eOmborAVIAScraping()
+    {
+        return view('eombor.e-ombor-AVIA-scraping');
+    }
 }

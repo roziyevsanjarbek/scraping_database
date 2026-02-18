@@ -457,7 +457,7 @@
             <div class="service-icon">🛍️</div>
             <h3>E-Ombor Skrapinga</h3>
             <p>Katta e-commerce platformalardan mahsulot katalogini, narxlarni va reyting ma'lumotlarini avtomatik yig'ing.</p>
-            <a href="{{ route('eOmborScraping') }}" class="btn btn-primary">Boshlash</a>
+            <a href="{{ route('eOmborATScraping') }}" class="btn btn-primary">Boshlash</a>
         </div>
 
         <!-- Belarus Scraping -->

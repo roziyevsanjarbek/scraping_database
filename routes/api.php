@@ -15,10 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('/avia-eombor/import', [AVIAEomborController::class, 'import']);
+Route::get('/avia-e-ombor', [AVIAEomborController::class, 'index']);
+Route::get('/avia-e-ombor/export', [AVIAEomborController::class, 'export']);
+
 
 Route::post('/rw-e-ombor/import', [RWEomborController::class, 'import']);
+Route::get('/rw-e-ombor', [RWEomborController::class, 'index']);
+Route::get('/rw-e-ombor/export', [RwEOmborController::class, 'export']);
 
 Route::post('/at-e-ombor/import', [EomborController::class, 'import']);
+Route::get('/at-e-ombor', [EomborController::class, 'index']);
+Route::get('/at-e-ombor/export', [EomborController::class, 'export']);
 
 
 Route::post('/belarus-benyakoni/import', [BelarusBenyakoniController::class, 'import']);
@@ -29,6 +36,8 @@ Route::post('/belarus-kozlovichi/import', [BelarusKozlovichiController::class, '
 
 
 Route::post('/turkey/import', [TurkeyController::class, 'import']);
+Route::get('/turkey', [TurkeyController::class, 'index']);
+Route::get('/turkey/export', [TurkeyController::class, 'export']);
 
 
 
