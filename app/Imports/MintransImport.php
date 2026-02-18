@@ -25,6 +25,7 @@ class MintransImport implements ToModel, WithHeadingRow
             'validity_period' => $this->parseDate($row['amal_qilish_muddati'] ?? null),
             'status' => $row['holati'] ?? null,
             'territorial_management' => $row['hududiy_boshqarma'] ?? null,
+            'inn' => $row['inn'] ?? null,
         ]);
     }
 

@@ -661,9 +661,23 @@
 
 
         // Download button
-        document.querySelectorAll('.btn-download')[0].addEventListener('click', function() {
-            alert('Fayl yuklab olinadi...');
+        document.querySelector('.btn-download').addEventListener('click', function() {
+
+            const boundary = document.getElementById('searchBoundary')?.value;
+            const car = document.getElementById('searchCar')?.value;
+            const date = document.getElementById('searchDate')?.value;
+            const status = document.getElementById('searchStatus')?.value;
+
+            let url = new URL('/api/qozoq/export', window.location.origin);
+
+            if (boundary) url.searchParams.append('boundary_name', boundary);
+            if (car) url.searchParams.append('car_number', car);
+            if (date) url.searchParams.append('date', date);
+            if (status) url.searchParams.append('status', status);
+
+            window.location.href = url.toString();
         });
+
 
         // Search functionality
         async function loadQozoqData(page = 1) {

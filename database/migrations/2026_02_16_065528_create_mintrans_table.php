@@ -25,6 +25,7 @@ return new class extends Migration
             $table->date('date_given')->nullable();
             $table->date('validity_period')->nullable();
             $table->string('status')->nullable();
+            $table->string('inn')->nullable();
             $table->string('territorial_management')->nullable();
             $table->timestamps();
         });

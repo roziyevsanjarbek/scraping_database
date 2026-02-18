@@ -21,5 +21,6 @@ class Mintrans extends Model
         'validity_period',
         'status',
         'territorial_management',
+        'inn',
     ];
 }

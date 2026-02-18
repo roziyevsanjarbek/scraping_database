@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Exports\QozoqExport;
 use App\Http\Controllers\Controller;
 use App\Models\Qozoq;
 use Illuminate\Http\Request;
@@ -58,6 +59,14 @@ class QozoqController extends Controller
             'status' => true,
             'data' => $data
         ]);
+    }
+
+    public function export(Request $request)
+    {
+        return Excel::download(
+            new QozoqExport($request),
+            'qozoq.xlsx'
+        );
     }
 
 

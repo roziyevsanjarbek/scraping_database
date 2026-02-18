@@ -64,8 +64,12 @@ Route::get('/turkey/export', [TurkeyController::class, 'export']);
 
 Route::post('/qozoq/import', [QozoqController::class, 'import']);
 Route::get('/qozoq', [QozoqController::class, 'index']);
+Route::get('/qozoq/export', [QozoqController::class, 'export']);
 
 
 
 
 Route::post('/mintrans/import', [MintransController::class, 'import']);
+Route::get('/mintrans', [MintransController::class, 'index']);
+Route::get('/mintrans/export', [MintransController::class, 'export']);
+
