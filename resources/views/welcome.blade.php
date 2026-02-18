@@ -465,7 +465,7 @@
             <div class="service-icon">🇧🇾</div>
             <h3>Belarus Skrapinga</h3>
             <p>Belarus bozorining tahlil uchun kerakli ma'lumotlarni yig'ing. Mahalliy web-saytlar va bozor ma'lumotlarini ta'minlanuvchidan oling.</p>
-            <a href=" {{ route('belarusScraping') }}" class="btn btn-primary">Boshlash</a>
+            <a href=" {{ route('belarusBenyakoni') }}" class="btn btn-primary">Boshlash</a>
         </div>
             <!-- Turkey Scraping -->
             <div class="service-card">

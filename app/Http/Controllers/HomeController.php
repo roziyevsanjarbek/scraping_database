@@ -46,4 +46,29 @@ class HomeController extends Controller
     {
         return view('eombor.e-ombor-AVIA-scraping');
     }
+
+    public function belarusBenyakoni()
+    {
+        return view('belarus.belarus-benyakoni');
+    }
+
+    public function belarusBrest()
+    {
+        return view('belarus.belarus-brest');
+    }
+
+    public function belarusGigorovschina()
+    {
+        return view('belarus.belarus-gigorovschina');
+    }
+
+    public function belarusKeminnii()
+    {
+        return view('belarus.belarus-keminnii-log');
+    }
+
+    public function belarusKozlovichi()
+    {
+        return view('belarus.belarus-kozlovichi');
+    }
 }

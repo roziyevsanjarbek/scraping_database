@@ -10,37 +10,25 @@
     <ul class="sidebar-menu">
         <li>
             <a href="{{ route('eOmborATScraping') }}" class="{{ request()->routeIs('eOmborATScraping') ? 'active' : '' }}">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+               
                 E Ombor Scraping AT Bo'yicha
             </a>
         </li>
         <li>
             <a href="{{ route('eOmborRWScraping') }}" class="{{ request()->routeIs('eOmborRWScraping') ? 'active' : '' }}">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+
                 E Ombor Scraping RW Bo'yicha
             </a>
         </li>
         <li>
             <a href="{{ route('eOmborAVIAScraping') }}" class="{{ request()->routeIs('eOmborAVIAScraping') ? 'active' : '' }}">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M11 4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4z"></path>
-                    <path d="M16 4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4z"></path>
-                </svg>
+
                 E Ombor Scraping AVIA Bo'yicha
             </a>
         </li>
         <li>
             <a href="/">
-                <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                    <polyline points="13 2 13 9 20 9"></polyline>
-                </svg>
+
                 Bosh Sahifaga Qaytish
             </a>
         </li>
